@@ -4,7 +4,7 @@
 - Install version 13 of [node](https://nodejs.org/en/) (this should be the latest version)
 
 ### To get started:
--	In your forked repo, create a new branch off of master called 'lesson-02'
+-	In your forked repo, create a new branch off of master called 'lesson-02' or similar
 -   Navigate to the root folder of this assignment within terminal `lesson02/assignment/`
 -   Run `npm install`
 -   Run `npx gulp`
@@ -20,5 +20,4 @@
 - Once assignment is graded, merge the Pull Request
 
 #### Image credit:
-
 "handsome" by foreverdigital is licensed with CC BY-NC-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/2.0/
