@@ -10,6 +10,10 @@ const container = document.querySelector('.template-hook');
 // Loop through all elements of the list
 cards.forEach(function(c){
   // Build HTML
+  // Container for the card elements
+  let cardList = document.createElement('div');
+  cardList.className = "full-card";
+  // Container for card class
   let list = document.createElement('div');
   list.className = 'card';
   list.innerHTML = `
@@ -31,6 +35,7 @@ cards.forEach(function(c){
     <p><strong>Code Languages:</strong> ${c.codeLanguages}</p>
   `
   // Insert HTML into page
-  container.append(list);
-  container.append(listMore);
+  cardList.append(list);
+  cardList.append(listMore);
+  container.append(cardList);
 });

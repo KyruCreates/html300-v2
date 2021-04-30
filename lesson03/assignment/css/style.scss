@@ -14,6 +14,10 @@
     //margin: 1rem;
     color: $darkergray;
   }
+  // the full card
+  .full-card {
+    margin: 1rem;
+  }
   // all card info
   .card {
     text-align: center;
@@ -50,10 +54,17 @@
   // border styling
   .template-hook {
     display: flex;
+    flex-direction: column;
     border: 3rem solid $darkgray;
     border-radius: 10px;
     margin: 1rem;
     color: $darkergray;
+  }
+  // the full card
+  .full-card {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
   }
   // card info
   .card {
