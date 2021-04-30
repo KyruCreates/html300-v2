@@ -126,18 +126,18 @@ document. addEventListener("DOMContentLoaded", function(){
     const inputField = document.querySelector('#name-form .input');
     const userInput = inputField.value;
 
-    if(isNaN(userInput)){
-      // Add the user input into the array
-      data.push(userInput);
-      // Sort the array in ascending order
-      data.sort();
+    // Don't need to check if this isn't a number
+    // Add the user input into the array
+    data.push(userInput);
+    // Sort the array in ascending order
+    data.sort();
 
-      // Use find to show the first name with the second letter a
-      const result = data.find(n => n[1] == 'a');
+    // Use find to show the first name with the second letter a
+    const result = data.find(n => n[1] == 'a');
 
-      // Output the result to the page
-      document.querySelector('#name-form .output').innerHTML = result;
-    }
+    // Output the result to the page
+    document.querySelector('#name-form .output').innerHTML = result;
+
     // Clear the form field so the user can try again
     inputField.value = '';
   })
