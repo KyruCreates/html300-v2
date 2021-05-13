@@ -10,7 +10,7 @@ Build a web page that you'd like to include in your final project that has a lay
 -   Run `npx gulp`
 -   Write new code in index.html and the appropriate .scss files to create a page that matches the provided layout.
 -   Use CSS Grid for the overall page layout and flexbox for aligning the content within.
-- Use media queries to make the layout responsive, with a design of your choosing.
+-   Use media queries to make the layout responsive, with a design of your choosing.
 - 	Fill in each area's content to build a page that you plan to include in your final project. If the page will rely on API data, you can use dummy data (lorem ipsum, placeholder images) for those parts.
 -   Include at least five nav items and align them as shown in mockup. If your final project won't have five pages, it's okay to use dummy data for some of the nav items.
 -   Remember, when building out fluid/responsive layouts, giving components and content areas fixed heights is something to generally avoid. Let the content fill the space, and use padding/margin for whitespace.

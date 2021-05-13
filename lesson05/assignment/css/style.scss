@@ -13,77 +13,108 @@
     display: block;
     background-color: $black;
     color: $gray;
-    padding: 1rem;
     // Header styling
     &__header {
       text-align: center;
-      padding: 1rem;
+      padding-top: 1rem;
       &__title {
         font-family: 'Caveat', cursive;
         color: $darkred;
+        font-size: 3rem;
         margin: 0;
         padding: 0;
       }
       &__subtitle {
         font-family: 'Courgette', cursive;
         color: $robins;
+        font-size: 2rem;
         margin-top: 0;
         margin-bottom: 1rem;
       }
-      // Nav menu
+      // Nav menu styling
       &__menu__list {
-        list-style-type: none;
+        list-style: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
+        background-color: $darkgray;
       }
       &__menu__list__page a {
         display: block;
-        padding: 0.5rem;
+        padding: 1rem;
         color: $lightblue;
         text-decoration: none;
+        text-shadow: 0px 0px 5px $black;
       }
       &__menu__list__page:hover {
         background-color: $blue;
+      }
+    }
+    // Page styling
+    &__content {
+      margin: 0 1rem;
+      padding-right: 1rem;
+      &__title {
+        font-family: 'Courgette', cursive;
+      }
+      &__imgs {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        &__examples {
+          margin-bottom: 1rem;
+          padding: 0;
+        }
+      }
+    }
+    // Sidebar styling
+    &__sidebar {
+      margin: 0 1rem;
+      padding: 0 1rem;
+      border-top: 1px solid $blue;
+      &__title {
+        font-family: 'Courgette', cursive;
+        text-align: center;
+      }
+      &__status {
+        text-align: center;
+        font-weight: bold;
+      }
+      &__info {
+        margin-top: 2rem;
+        padding: 0;
+        list-style-type: circle;
+        &__price {
+          padding-bottom: 1rem;
+        }
       }
     }
     // Footer styling
     &__footer {
       font-style: italic;
       text-align: center;
-      &__links {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
-      &__links__element a {
-        display: inline-block;
-        padding: 0.5rem;
-        color: $lightblue;
-        text-decoration: none;
-      }
-      &__links__element:hover {
-        background-color: $blue;
-      }
     }
   }
   .active {
-    background-color: $darkgray;
+    background-color: $darkergray;
   }
 }
 // responsive sizing for "screen and (min-width: 768px)"
 @include media-query('tab') {
   .Main {
     font-family: 'Roboto', sans-serif;
-    display: block;
+    display: grid;
+    grid-template-areas:
+      "heading heading heading heading heading heading heading"
+      "menu menu menu menu menu menu menu"
+      "sidebar sidebar sidebar content content content content"
+      "footer footer footer footer footer footer footer";
     background-color: $black;
     color: $gray;
-    padding: 1rem;
     // Header styling
     &__header {
       text-align: center;
-      padding: 1rem;
+      padding-top: 1rem;
       &__title {
         font-family: 'Caveat', cursive;
         color: $darkred;
@@ -100,21 +131,21 @@
       }
       // Nav menu
       // Animation inspired by https://codepen.io/EvyatarDa/pen/waKXMd
-      // Fix position problems - causing animation not to stick to the li
+      // Fix position problems - causing animation not to stick to the li, instead it is animating for the entire page
       &__menu__list {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+        list-style: none;
         overflow: hidden;
+        text-align: center;
+        background-color: $darkgray;
       }
       &__menu__list__page {
-        float: left;
+        display: inline-block;
       }
       &__menu__list__page a {
-        display: block;
-        padding: 0.5rem;
+        padding: 1rem;
         color: $lightblue;
         text-decoration: none;
+        text-shadow: 0px 0px 5px $black;
       }
       &__menu__list__page a:before, &__menu__list__page a:after {
         position: fixed;
@@ -136,54 +167,84 @@
       }
       &__menu__list__page:hover {
         background-color: $blue;
+        padding: 1rem 0;
       }
       &__menu__list__page a:hover:before, &__menu__list__page a:hover:after {
         opacity: 1;
         transform: translateY(0px);
       }
     }
-    // Gallery styling
+    // Page styling
     &__content {
+      margin: 0 1rem;
+      padding-right: 1rem;
       &__title {
         font-family: 'Courgette', cursive;
-        padding: 0 1rem;
       }
-      &__pgdesc {
-        padding: 0 1rem;
+      &__imgs {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        &__examples {
+          margin-bottom: 1rem;
+          margin-right: 1rem;
+          padding: 0;
+        }
       }
+    }
+    // Sidebar styling
+    &__sidebar {
+      margin: 0 1rem;
+      padding: 0 1rem;
+      border-right: 1px solid $blue;
+      &__title {
+        font-family: 'Courgette', cursive;
+        text-align: center;
+      }
+      &__status {
+        text-align: center;
+        font-weight: bold;
+      }
+      &__info {
+        margin-top: 2rem;
+        padding: 0;
+        list-style-type: circle;
+        &__price {
+          padding-bottom: 1rem;
+        }
+      }
+    }
     // Footer styling
     &__footer {
       font-style: italic;
       text-align: center;
-      &__links {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
-      &__links__element {
-        float: right;
-      }
-      &__links__element a {
-        display: inline-block;
-        padding: 0.5rem;
-        color: $lightblue;
-        text-decoration: none;
-      }
-      &__links__element:hover {
-        background-color: $blue;
-      }
     }
   }
   .active {
-    background-color: $darkgray;
+    background-color: $darkergray;
+    padding: 1rem 0;
+  }
+  .heading {
+    grid-area: heading;
+  }
+  .menu {
+    grid-area: menu;
+  }
+  .content {
+    grid-area: content;
+  }
+  .sidebar {
+    grid-area: sidebar;
+  }
+  .footer {
+    grid-area: footer;
   }
 }
 // responsive sizing for "screen and (min-width: 920px)"
 @include media-query('lg') {
-  // Adjust font size
+
 }
 // responsive sizing for "screen and (min-width: 1024px)"
 @include media-query('desk') {
-  // adjust font size
+
 }
