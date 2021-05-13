@@ -131,7 +131,7 @@
       }
       // Nav menu
       // Animation inspired by https://codepen.io/EvyatarDa/pen/waKXMd
-      // Fix position problems - causing animation not to stick to the li, instead it is animating for the entire page
+      // Adjust y to move borders in/out
       &__menu__list {
         list-style: none;
         overflow: hidden;
@@ -140,6 +140,11 @@
       }
       &__menu__list__page {
         display: inline-block;
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        transition-property: border-top, border-bottom;
+        transition-duration: 1s;
+        transition-timing-function: ease-in-out;
       }
       &__menu__list__page a {
         padding: 1rem;
@@ -147,31 +152,11 @@
         text-decoration: none;
         text-shadow: 0px 0px 5px $black;
       }
-      &__menu__list__page a:before, &__menu__list__page a:after {
-        position: fixed;
-        left: 0px;
-        width: 100%;
-        height: 2px;
-        background: $lightblue;
-        content: "";
-        opacity: 0;
-        transition: all 0.3s;
-      }
-      &__menu__list__page a:before {
-        top: 0px;
-        transform: translateY(10px);
-      }
-      &__menu__list__page a:after {
-        bottom: 0px;
-        transform: translateY(-10px);
-      }
-      &__menu__list__page:hover {
+      &__menu__list__page:hover, &__menu__list__page:focus {
+        border-top: 2px solid $robins;
+        border-bottom: 2px solid $robins;
         background-color: $blue;
         padding: 1rem 0;
-      }
-      &__menu__list__page a:hover:before, &__menu__list__page a:hover:after {
-        opacity: 1;
-        transform: translateY(0px);
       }
     }
     // Page styling
@@ -213,31 +198,31 @@
           padding-bottom: 1rem;
         }
       }
-    }
-    // Footer styling
-    &__footer {
+      // Footer styling
+      &__footer {
       font-style: italic;
       text-align: center;
+      }
     }
-  }
-  .active {
-    background-color: $darkergray;
-    padding: 1rem 0;
-  }
-  .heading {
-    grid-area: heading;
-  }
-  .menu {
-    grid-area: menu;
-  }
-  .content {
-    grid-area: content;
-  }
-  .sidebar {
-    grid-area: sidebar;
-  }
-  .footer {
-    grid-area: footer;
+    .active {
+      background-color: $darkergray;
+      padding: 1rem 0;
+    }
+    .heading {
+      grid-area: heading;
+    }
+    .menu {
+      grid-area: menu;
+    }
+    .content {
+      grid-area: content;
+    }
+    .sidebar {
+      grid-area: sidebar;
+    }
+    .footer {
+      grid-area: footer;
+    }
   }
 }
 // responsive sizing for "screen and (min-width: 920px)"
