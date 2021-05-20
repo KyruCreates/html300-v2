@@ -33,7 +33,7 @@ These pages can be copied over to your final project later, so create them using
 	- Use of tooltips or popovers somewhere on one of the pages
 	- Page 1: A landing page with some content
 	- Page 2: A page with images using Bootstrap 4 responsive/fluid images
-	- Page 3: A page with a layout that utilizes the Bootstrap 4 grid system, make sure page 			components use at least 3 bootstrap sizes (XS, SM, MD, LG, XL)
+	- Page 3: A page with a layout that utilizes the Bootstrap 4 grid system, make sure page components use at least 3 bootstrap sizes (XS, SM, MD, LG, XL)
 	- Page 4: A page that uses a Bootstrap 4 accordion component
 - **Bonus:**  Use a Jumbotron on the landing page.  
 - **Extra Bonus:**  Use a carousel slider.
@@ -44,7 +44,8 @@ These pages can be copied over to your final project later, so create them using
 	- A form with text and checkbox points
 	- A custom form handler that does validation and displays an alert if the input is invalid
 	- An accordion or modal
-- **Bonus:** Use Bootstrap Grid
+- Expectation is that form, form inputs, form submit button, alert, navigation, and accordion/modal are Bootstrap components. The form handler will be custom functionality written by you. Revisit earlier lessons on working with the DOM if you need a refresher.
+- **Bonus:** Use Bootstrap Grid for page layout
 
 ### To Submit:
 - Create a Pull Request for your assignment branch to your forked master
