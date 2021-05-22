@@ -4,7 +4,7 @@ We will be building out a flexbox header component with navigation and logo/CTA 
 
 ### To get started:
 -   Fetch from the upstream master and merge with your local master as we start each lesson
-- In your forked repo, create a new branch off of master called `lesson-05` or similar
+-   In your forked repo, create a new branch off of master called `lesson-05` or similar
 -   Navigate to the root folder of this activity within terminal in your fork, `lesson05/activity`
 -   Run `npm install`
 -   Run `npx gulp`
@@ -14,4 +14,3 @@ We will be building out a flexbox header component with navigation and logo/CTA 
 -   The Logo & LogIn buttons should remain on the far left and right edges of the nav, respectively
 -   The center main page buttons should stay centered within the nav
 -   At screen widths less than 768px, the logo/login buttons should be on top and bottom of the main page buttons, while the page buttons remain centered between
-

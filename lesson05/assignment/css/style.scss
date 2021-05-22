@@ -3,4 +3,233 @@
 @import 'settings.variables';
 @import 'settings.responsive';
 @import 'components.content';
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Courgette&family=Roboto&display=swap');
 
+// responsive sizing for "screen and (max-width: 767px)"
+@include media-query('mobile') {
+  .Main {
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    background-color: $black;
+    color: $gray;
+    // Header styling
+    &__header {
+      text-align: center;
+      padding-top: 1rem;
+      &__title {
+        font-family: 'Caveat', cursive;
+        color: $darkred;
+        font-size: 3rem;
+        margin: 0;
+        padding: 0;
+      }
+      &__subtitle {
+        font-family: 'Courgette', cursive;
+        color: $robins;
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      // Nav menu styling
+      &__menu__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: $darkgray;
+      }
+      &__menu__list__page a {
+        display: block;
+        padding: 1rem;
+        color: $lightblue;
+        text-decoration: none;
+        text-shadow: 0px 0px 5px $black;
+      }
+      &__menu__list__page:hover {
+        background-color: $blue;
+      }
+    }
+    // Page styling
+    &__content {
+      margin: 0 1rem;
+      padding-right: 1rem;
+      &__title {
+        font-family: 'Courgette', cursive;
+      }
+      &__imgs {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        &__examples {
+          margin-bottom: 1rem;
+          padding: 0;
+        }
+      }
+    }
+    // Sidebar styling
+    &__sidebar {
+      margin: 0 1rem;
+      padding: 0 1rem;
+      border-top: 1px solid $blue;
+      &__title {
+        font-family: 'Courgette', cursive;
+        text-align: center;
+      }
+      &__status {
+        text-align: center;
+        font-weight: bold;
+      }
+      &__info {
+        margin-top: 2rem;
+        padding: 0;
+        list-style-type: circle;
+        &__price {
+          padding-bottom: 1rem;
+        }
+      }
+    }
+    // Footer styling
+    &__footer {
+      font-style: italic;
+      text-align: center;
+    }
+  }
+  .active {
+    background-color: $darkergray;
+  }
+}
+// responsive sizing for "screen and (min-width: 768px)"
+@include media-query('tab') {
+  .Main {
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    grid-template-areas:
+      "heading heading heading heading heading heading heading"
+      "menu menu menu menu menu menu menu"
+      "sidebar sidebar sidebar content content content content"
+      "footer footer footer footer footer footer footer";
+    background-color: $black;
+    color: $gray;
+    // Header styling
+    &__header {
+      text-align: center;
+      padding-top: 1rem;
+      &__title {
+        font-family: 'Caveat', cursive;
+        color: $darkred;
+        font-size: 3rem;
+        margin: 0;
+        padding: 0;
+      }
+      &__subtitle {
+        font-family: 'Courgette', cursive;
+        color: $robins;
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      // Nav menu
+      // Animation inspired by https://codepen.io/EvyatarDa/pen/waKXMd
+      // Adjust y to move borders in/out
+      &__menu__list {
+        list-style: none;
+        overflow: hidden;
+        text-align: center;
+        background-color: $darkgray;
+      }
+      &__menu__list__page {
+        display: inline-block;
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        transition-property: border-top, border-bottom;
+        transition-duration: 1s;
+        transition-timing-function: ease-in-out;
+      }
+      &__menu__list__page a {
+        padding: 1rem;
+        color: $lightblue;
+        text-decoration: none;
+        text-shadow: 0px 0px 5px $black;
+      }
+      &__menu__list__page:hover, &__menu__list__page:focus {
+        border-top: 2px solid $robins;
+        border-bottom: 2px solid $robins;
+        background-color: $blue;
+        padding: 1rem 0;
+      }
+    }
+    // Page styling
+    &__content {
+      margin: 0 1rem;
+      padding-right: 1rem;
+      &__title {
+        font-family: 'Courgette', cursive;
+      }
+      &__imgs {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        &__examples {
+          margin-bottom: 1rem;
+          margin-right: 1rem;
+          padding: 0;
+        }
+      }
+    }
+    // Sidebar styling
+    &__sidebar {
+      margin: 0 1rem;
+      padding: 0 1rem;
+      border-right: 1px solid $blue;
+      &__title {
+        font-family: 'Courgette', cursive;
+        text-align: center;
+      }
+      &__status {
+        text-align: center;
+        font-weight: bold;
+      }
+      &__info {
+        margin-top: 2rem;
+        padding: 0;
+        list-style-type: circle;
+        &__price {
+          padding-bottom: 1rem;
+        }
+      }
+      // Footer styling
+      &__footer {
+      font-style: italic;
+      text-align: center;
+      }
+    }
+    .active {
+      background-color: $darkergray;
+      padding: 1rem 0;
+    }
+    .heading {
+      grid-area: heading;
+    }
+    .menu {
+      grid-area: menu;
+    }
+    .content {
+      grid-area: content;
+    }
+    .sidebar {
+      grid-area: sidebar;
+    }
+    .footer {
+      grid-area: footer;
+    }
+  }
+}
+// responsive sizing for "screen and (min-width: 920px)"
+@include media-query('lg') {
+
+}
+// responsive sizing for "screen and (min-width: 1024px)"
+@include media-query('desk') {
+
+}
