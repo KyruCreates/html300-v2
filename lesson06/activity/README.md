@@ -1,13 +1,12 @@
-# Activity 06 - Bootstrap 4 Forms
+# Activity 06 - Bootstrap 5 Forms
 
-We will be working with Bootstrap 4 to create a submittable form.
+We will be working with Bootstrap 5 to create a submittable form.
 
 ### Bootstrap References
-- [Bootstrap Docs](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
-- [Bootstrap Forms](https://getbootstrap.com/docs/4.0/components/forms/)
-- [Bootstrap with Sass](https://getbootstrap.com/docs/4.3/getting-started/theming/#sass)
-- [Bootstrap Tooltips](https://getbootstrap.com/docs/4.3/components/tooltips/)
-
+- [Bootstrap Docs](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- [Bootstrap Forms](https://getbootstrap.com/docs/5.0/forms/)
+- [Bootstrap with Sass](https://getbootstrap.com/docs/5.0/customize/sass/)
+- [Bootstrap Tooltips](https://getbootstrap.com/docs/5.0/components/tooltips/)
 
 ### To get started:
 - Create an HTML page
