@@ -1,15 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="css/style.css" />
-        <title>Activity 06 - Bootstrap 4</title>
-    </head>
-    <body>
-        <main class="main">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Lecture Class Activity</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
-        </main>
-    </body>
+  </head>
+  <body>
+    <!-- Convert the navbar to use Bootstrap navbar. -->
+    <ul class="nav">
+      <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">News</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+    </ul>
+    <h1 class="display-1 text-center">About Bootstrap</h1>
+    <!-- Using Bootstrap alert. -->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Holy guacamole!</strong> Check out the new stuff!
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <h2 class="text-primary">The Team</h2>
+    <p class="text-center">Bootstrap is maintained by a small team of developers on GitHub. We’re actively looking
+      to grow this team and would love to hear from you if you’re excited about CSS at scale,
+      writing and maintaining vanilla JavaScript plugins, and improving build tooling processes
+      for frontend code.
+    </p>
+
+    <h2 class="display-2 text-center">History</h2>
+    <p>Originally created by a designer and a developer at Twitter, Bootstrap has
+      become one of the most popular front-end frameworks and open source projects in the world. <br>
+      Bootstrap was created at Twitter in mid-2010 by @mdo and @fat. Prior to being an open-sourced
+      framework, Bootstrap was known as Twitter Blueprint. A few months into development, Twitter held
+      its first Hack Week and the project exploded as developers of all skill levels jumped in without
+      any external guidance. It served as the style guide for internal tools development at the company
+      for over a year before its public release, and continues to do so today. <br>
+      Originally released on Friday, August 19, 2011, we’ve since had over twenty releases, including
+      two major rewrites with v2 and v3. With Bootstrap 2, we added responsive functionality to the
+      entire framework as an optional stylesheet. Building on that with Bootstrap 3, we rewrote the
+      library once more to make it responsive by default with a mobile first approach.<br>
+      With Bootstrap 4, we once again rewrote the project to account for two key architectural changes: a
+      migration to Sass and the move to CSS’s flexbox. Our intention is to help in a small way to move
+      the web development community forward by pushing for newer CSS properties, fewer dependencies, and new
+      technologies across more modern browsers.
+    </p>
+
+    <!-- Use this Button to collapse and show the important notice. -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#importantnotice">Important Notice</button>
+    <button type="button" class="btn btn-primary" disabled>Disabled Button</button>
+    <div class="collapse" id="importantnotice">
+      <p>The above content, including the team description
+      and history of Boostrap were directly copied from Bootstrap's about page, which
+      can be found <a href="https://getbootstrap.com/docs/4.1/about/overview/">here</a>.
+      </p>
+    </div>
+
+    <!-- Convert the following to Bootstrap cards. -->
+    <h2>Creators of Bootstrap</h2>
+    <div class="card" style="max-width: 15rem; height: auto;">
+      <img src="https://miro.medium.com/max/2468/1*8_RQ_3zBY1WSqLwqzPrEdg.jpeg" alt="A man sitting against a table" class="card-img-top">
+      <div class="card-body">
+        <p class="card-text">Mark Otto</p>
+      </div>
+    </div>
+
+    <div class="card" style="max-width: 15rem; height: auto;" >
+      <img src="https://media-exp1.licdn.com/dms/image/C5603AQFhv1giuPNS3w/profile-displayphoto-shrink_400_400/0/1525623724547?e=1626307200&v=beta&t=7W5j_qE1QVXSFn0tGYSKngCX7uE4eRl1HgjBQYS6s-0" alt="Picture of two men standing" class="card-img-top">
+      <div class="card-body">
+        <p class="card-text">Jacob Thorton</p>
+      </div>
+    </div>
+
+    <!-- Convert frequenty asked questions section to use an accordion. -->
+    <!-- Implemented accordion flush which changes the default styling -->
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion accordion-flush" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Is Bootstrap responsive?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Absolutely! Bootstrap components are built to respond well on desktops, laptops, phones, tablets, and whatever other screen sizes might come its way.</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            What is the latest version of Bootstrap?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Bootstrap is currently on it's 5th version, which was released on May 5th, 2021.</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What browsers does Bootstrap support?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <p>Bootstrap supports most browsers on desktop and mobile, including: Google Chrome, Microsoft Edge, Firefox, Safari, and iOS Safari.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Convert the form to use Bootstrap. -->
+    <h2>Contact Us</h2>
+    <form>
+      <!-- Make #exampleInputEmail1 a large input -->
+      <!-- https://getbootstrap.com/docs/5.0/forms/input-group/#sizing -->
+      <!-- Another option: https://getbootstrap.com/docs/5.0/forms/form-control/#sizing -->
+      <div class="input-group input-group-lg">
+        <label for="exampleInputEmail1" class="input-group-text" id="inputGroup-sizing-lg">Email address</label>
+        <input type="email" id="exampleInputEmail1" class="form-control">
+      </div>
+      <div class="input-group">
+        <label for="exampleInputPassword1" class="input-group-text">Password</label>
+        <input type="password" id="exampleInputPassword1" class="form-control">
+      </div>
+      <div class="form-check">
+        <input type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked class="form-check-input">
+        <label for="exampleRadios1" class="form-check-label">
+          Default radio
+        </label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="exampleRadios" id="exampleRadios2" value="option2" class="form-check-input">
+        <label for="exampleRadios2" class="form-check-label">
+          Second default radio
+        </label>
+      </div>
+      <!-- Disable #exampleRadios3 -->
+      <!-- https://getbootstrap.com/docs/5.0/forms/overview/#disabled-forms -->
+      <div class="form-check">
+        <input type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled class="form-check-input">
+        <label for="exampleRadios3" class="form-check-label">
+          Disabled radio
+        </label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" id="exampleCheck1" class="form-check-input">
+        <label for="exampleCheck1" class="form-check-label">Check me out</label>
+      </div>
+      <!-- Add a select input type with appropriate Bootstrap classes -->
+      <!-- https://getbootstrap.com/docs/5.0/forms/input-group/#custom-forms -->
+      <div class="input-group">
+        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+        <select class="form-select" name="inputGroupSelect01">
+          <option selected>Choose...</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
 </html>
