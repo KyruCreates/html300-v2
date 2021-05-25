@@ -36,24 +36,20 @@
       <!-- Individual Activity -->
       <!-- Add an image to the HTML, and using v-if, have it only display if the value of imageShowing is true. -->
       <!-- Using v-bind, set the src of the img to the value of imageSrc. -->
-      <img v-if="imageShowing" v-bind:src="imageSrc" />
+      <!-- <img v-if="imageShowing" v-bind:src="imageSrc" /> -->
+
+      <!-- BONUS: each time the app loads, have the value of “imgSrc” change. I’d recommend creating an array of valid source locations and having the value be a random one in the array -->
+      <img v-if="imageShowing" v-bind:src="imgSrc[Math.floor(Math.random() * 3)]" />
+
       <!-- Add a button to the HTML, and using v-if, have it only display if the value of imageShowing is false. -->
       <!-- One way to do the button -->
       <!-- <button v-if="!imageShowing">I'm a button!</button> -->
       <!-- Another way to do the button because it is a boolean -->
       <!-- Group Activity:
-          Add an on-click event to the button you created in first activity so that it triggers the toggleImage method on click.
-          Verify that the image appears and button disappears after button click. -->
+        Add an on-click event to the button you created in first activity so that it triggers the toggleImage method on click.
+        Verify that the image appears and button disappears after button click. -->
       <button v-else v-on:click="toggleImage" v-bind:src="imageSrc">I'm an img button!</button>
 
-      <!-- BONUS: each time the app loads, have the value of “imgSrc” change. I’d recommend creating an array of valid source locations and having the value be a random one in the array -->
-      <!-- Array loop variant -->
-      <ul>
-        <li v-for="source in imgSrc">
-          <!-- !!!make the value random!!! -->
-          {{ source }}
-        </li>
-      </ul>
 
       <p>Counter: {{ counter }}</p>
       <!-- Button with on click event handler -->
