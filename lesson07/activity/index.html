@@ -1,13 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Activity 07 - Vue</title>
-        <link rel="stylesheet" href="/css/style.css">
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Activity 07 - Vue</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Anything within {{ }} is interpreted as js -->
+      <!-- v-bind = hey Vue pay attention to this for the title (basically a tooltip on hover) -->
+      <!-- <p v-bind:title="greeting">Hello, {{ name }}</p> -->
+      <p v-bind:title="greeting">
+        <!-- v-if -->
+        <span v-if="name === 'cheri'">
+          <!-- Hello, {{ name }} -->
 
-    </body>
+          <!-- Call to genGreeting method -->
+          {{ genGreeting() }} {{ name }}
+        </span>
+        <!-- v-else -->
+        <span v-else>
+          Goodbye
+        </span>
+      </p>
+      <!-- v-for -->
+      <ul>
+        <li v-for="num in favNumbers">
+          {{ num }}
+        </li>
+      </ul>
+
+      <!-- Individual Activity -->
+      <!-- Add an image to the HTML, and using v-if, have it only display if the value of imageShowing is true. -->
+      <!-- Using v-bind, set the src of the img to the value of imageSrc. -->
+      <!-- <img v-if="imageShowing" v-bind:src="imageSrc" /> -->
+
+      <!-- BONUS: each time the app loads, have the value of “imgSrc” change. I’d recommend creating an array of valid source locations and having the value be a random one in the array -->
+      <img v-if="imageShowing" v-bind:src="imgSrc[Math.floor(Math.random() * 3)]" />
+
+      <!-- Add a button to the HTML, and using v-if, have it only display if the value of imageShowing is false. -->
+      <!-- One way to do the button -->
+      <!-- <button v-if="!imageShowing">I'm a button!</button> -->
+      <!-- Another way to do the button because it is a boolean -->
+      <!-- Group Activity:
+        Add an on-click event to the button you created in first activity so that it triggers the toggleImage method on click.
+        Verify that the image appears and button disappears after button click. -->
+      <button v-else v-on:click="toggleImage" v-bind:src="imageSrc">I'm an img button!</button>
+
+
+      <p>Counter: {{ counter }}</p>
+      <!-- Button with on click event handler -->
+      <button v-on:click="plusOne">Add!</button>
+      <!-- Add more with the amount specified in parameters -->
+      <button v-on:click="addMore(3)">Add More!</button>
+    </div>
+
+    <script type="text/javascript">
+      const CounterApp = {
+        data() {
+          return {
+            counter: 0,
+            // Name
+            name: 'cheri',
+            // Standard greeting
+            // greeting: 'HEY!',
+            // Using the method
+            greeting: this.genGreeting(),
+            // Array of favNumbers
+            favNumbers: [3, 6, 15],
+            // Adding attributes for activity
+            imageShowing: false,
+            // Img source
+            imageSrc: 'https://picsum.photos/200',
+            // Bonus: Array variant - Img source
+            imgSrc: ['https://picsum.photos/200', 'https://picsum.photos/200?grayscale', 'https://picsum.photos/200?blur=2']
+          }
+        },
+        // Dynamic application
+        methods: {
+          // Method that increments counter
+          plusOne() {
+            this.counter += 1;
+          },
+          addMore(amt) {
+            this.counter += parseInt(amt);
+          },
+          // Generate greeting
+          genGreeting() {
+            return 'Hello there!';
+          },
+          // Group Activity: Add a method to your Vue app definition called “toggleImage” that toggles the value of “imageShowing”.
+          toggleImage() {
+            if(this.imageShowing === false){
+              this.imageShowing = true;
+            } else {
+              this.imageShowing = false;
+            }
+          }
+        }
+      }
+      Vue.createApp(CounterApp).mount('#app');
+    </script>
+  </body>
 </html>

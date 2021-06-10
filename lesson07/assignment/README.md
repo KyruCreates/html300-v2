@@ -1,6 +1,6 @@
 # Assignment 07 - Vue
 
-In the last assignment in lesson06, you created a responsive website with Bootstrap 4.
+In the last assignment in lesson06, you created a responsive website with Bootstrap 5.
 
 ### References
 - [Vue Docs](https://v3.vuejs.org/)
